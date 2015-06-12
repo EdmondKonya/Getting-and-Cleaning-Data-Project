@@ -16,9 +16,6 @@ Subsequently, the body linear acceleration and angular velocity were derived in 
 
 Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
 
-The reasoning behind my selection of features is that the assignment explicitly states "Extracts only the measurements on the mean and standard deviation for each measurement."
-To be complete, I included all variables having to do with mean or standard deviation.
-
 In short, for this derived dataset, these signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
@@ -40,11 +37,6 @@ In short, for this derived dataset, these signals were used to estimate variable
 * fBodyGyroMag
 * fBodyGyroJerkMag
 
-The set of variables that were estimated (and kept for this assignment) from these signals are: 
-
-* mean(): Mean value
-* std(): Standard deviation
-
 Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 
 * gravityMean
@@ -53,8 +45,13 @@ Additional vectors obtained by averaging the signals in a signal window sample. 
 * tBodyGyroMean
 * tBodyGyroJerkMean
 
+According to the project requirements, only variables containing a mean or std of a feature have been selected for the final tidy_data set.
+
+* mean --> Mean value
+* std --> Standard deviation
+
 Other estimates have been removed for the purpose of this excercise.
 
-Note: features are normalized and bounded within [-1,1].
+The resulting variable names are of the following form; fbodyacc_mean_x, describing the mean value on the x-axis for the "fbodyacc" feature.
 
-The resulting variable names are of the following form: tbodyaccmeanx, which means the mean value of tBodyAcc-XYZ.
+Note: features are normalized and bounded within [-1,1].
