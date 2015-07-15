@@ -62,6 +62,9 @@ tidy_data <- aggregate(totaldata, by=list(totaldata$activity, totaldata$subject)
 tidy_data$activity <- NULL
 tidy_data$subject <- NULL
 
+colnames(tidy_data)[1] <- "activity"
+colnames(tidy_data)[2] <- "subject_id"
+  
 #Printing out a.txt file
 write.table(tidy_data, file = "tidy_data.txt", sep = " ", row.name=FALSE)
 
